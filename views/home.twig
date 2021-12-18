@@ -1,0 +1,11 @@
+{% extends 'partials/layout.twig' %}
+{% set title = 'Home' %}
+
+{% block body %}
+  <section class="container py-16">
+    <h1 class="text-4xl font-black">
+      Hello, {{ user.name ?? user.email ?? 'guest' }}!
+    </h1>
+    <p class="mt-2 text-lg">Welcome to my fastify starter project! Hope you like it.</p>
+  </section>
+{% endblock %}

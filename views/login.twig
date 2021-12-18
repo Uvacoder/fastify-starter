@@ -1,0 +1,32 @@
+{% extends 'partials/layout.twig' %}
+{% set title = 'Login' %}
+
+{% block body %}
+  <section class="container py-16">
+    <h1 class="text-4xl font-black">
+      {{ title }}
+    </h1>
+    <form hx-post="/api/login" hx-target="#response" class="mt-4 flex-wrap">
+      <label class="block">
+        Email:
+        <input
+          name="email"
+          type="email"
+          class="block rounded w-full"
+        >
+      </label>
+      <label class="block mt-4">
+        Password:
+        <input
+          name="password"
+          type="password"
+          class="block rounded w-full"
+        >
+      </label>
+      <button class="mt-8 bg-gray-900 text-white px-4 py-2 rounded">
+        Submit
+      </button>
+    </form>
+    <div id="response"></div>
+  </section>
+{% endblock %}

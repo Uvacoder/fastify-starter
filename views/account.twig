@@ -1,0 +1,37 @@
+{% extends 'partials/layout.twig' %}
+{% set title = 'Account' %}
+
+{% block body %}
+  <section class="container py-16">
+    <h1 class="font-black text-6xl">
+      {{ title }}
+    </h1>
+    <form hx-patch="/api/user" hx-target="#response" class="mt-4 flex-wrap">
+      <label class="block">
+        Email:
+        <input
+          name="email"
+          class="block rounded w-full"
+          type="email"
+          value="{{ user.email }}"
+        >
+      </label>
+      <label class="block mt-4">
+        Name:
+        <input
+          name="name"
+          class="block rounded w-full"
+          type="text"
+          value="{{ user.name ?? '' }}"
+        >
+      </label>
+      <button
+        class="mt-8 bg-gray-900 text-white px-4 py-2 rounded"
+        type="submit"
+      >
+        Submit
+      </button>
+    </form>
+    <div id="response"></div>
+  </section>
+{% endblock %}
